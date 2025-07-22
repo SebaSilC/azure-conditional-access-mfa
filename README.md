@@ -12,10 +12,12 @@ Implementation of a secure Microsoft Entra ID environment by enforcing Multi-Fac
 - [Diagram]
 - [Objectives]
 - [Steps Performed]
-  - [1. User and Group Creation]
-  - [2. Conditional Access Policy]
-  - [3. Testing and Verification]
-  - [4. Cleanup]
+  - [1. Microsoft Entra ID User Creation]
+  - [2. Security Group Setup]
+  - [3. Per-User MFA Enablement (Legacy)]
+  - [4. Conditional Access Policy Configuration]
+  - [5. MFA Prompt Verification]
+  - [6. Cleanup]
 - [Screenshots]
 - [Lessons Learned]
 - [References]
@@ -62,35 +64,36 @@ By using Conditional Access with Multi-Factor Authentication (MFA) in Azure, org
 
 ## Steps Performed
 
-1. User and Group Creation
-   - Created two test users:
-     - alice@azurelabstest.onmicrosoft.com
-     - bob@azurelabstest.onmicrosoft.com
-   - Created a security group MFA-Required-Users and assigned Alice and Bob as members.
+1. Microsoft Entra ID User Creation
+   - Created two cloud-only users in Azure AD for lab testing: Alice (alice@azurelabstest.onmicrosoft.com) and Bob (bob@azurelabstest.onmicrosoft.com. Screenshot: users-list.png)
 
-2. Conditional Access Policy
+2. Security Group Setup
+   - Created the security group MFA-Required-Users in Microsoft Entra ID.
+   - Added Alice and Bob as members for targeted policy assignment (Screenshot: group-members.png)
+
+3. Per-User MFA Enablement (Legacy)
+   - Enabled per-user MFA for Alice and Bob using Microsoft Entra ID’s classic MFA settings (Screenshot: per-user-mfa-enabled.png)
+
+4. Conditional Access Policy Configuration
    - Navigated to Microsoft Entra ID → Security → Conditional Access.
-   - Created a policy Require MFA for MFA-Required-Users.
-   - Targeted the MFA-Required-Users group.
-   - Applied to All cloud apps.
-   - Access control set to Require multi-factor authentication.
-   - Enabled the policy.
-   - Disabled Security Defaults to allow custom policies.
+   - Created a Conditional Access policy named Require MFA for MFA-Required-Users.
+     - Assigned the policy to the MFA-Required-Users group.
+     - Targeted all cloud apps.
+     - Set the access control to require multi-factor authentication.
+     - Enabled the policy after disabling Security Defaults.
+   - Verified policy status in the Conditional Access policies table (Screenshot: conditional-access-policy.png)
 
-3. Testing and Verification
-   - Signed in as Alice Demo from a private browser.
-   - Verified the Conditional Access policy triggered an MFA prompt at login.
-   - Completed the registration for MFA (Authenticator app/SMS).
-   - Verified successful login post-MFA.
-   - Checked Microsoft Entra ID Sign-in logs to confirm Conditional Access and MFA enforcement.
+5. MFA Prompt Verification
+   - Tested the policy by signing in as Alice Demo.
+   - Verified that an MFA registration prompt was required before access was granted to cloud resources.
+   - Confirmed the Conditional Access policy was actively enforcing MFA for group members (Screenshot: mfa-prompt.png)
 
-4. Cleanup
-   - Go to Microsoft Entra ID > Users: Delete Alice and Bob.
-   - Go to Groups: Delete the MFA-Required-Users group.
-   - Microsoft Entra ID > Security > Conditional Access: Delete the policy you created.
-   - Microsoft Entra ID > Users > Per-user MFA: Disable MFA for test users before deleting.
-   - Remove any Key Vaults, VMs or other resources created for this lab.
-   - Use the Resource groups blade for fast bulk cleanup.
+6. Cleanup
+   - Deleted test users (Alice and Bob) from Microsoft Entra ID to prevent unused accounts.
+   - Removed the MFA-Required-Users security group.
+   - Deleted the Conditional Access policy enforcing MFA.
+   - Disabled per-user MFA settings for the lab users (if previously enabled).
+   - Verified no lab-related objects remain in Microsoft Entra ID or Conditional Access policies.
 
 ---
 
@@ -105,18 +108,6 @@ By using Conditional Access with Multi-Factor Authentication (MFA) in Azure, org
 | 3    | conditional-access-policy.png | Conditional Access policy configured to require MFA for group.|
 | 4    | per-user-mfa-enabled.png      | Per-user MFA enabled for Alice and Bob (legacy approach)      |
 | 5    | mfa-prompt.png                | MFA prompt shown to Alice/Bob on sign-in (policy tested)      |
-
-## Screenshot Explanations
-
-1. users-list.png: Shows the Microsoft Entra ID “Users” list with Alice and Bob created for the lab.
-
-2. group-members.png: MFA-Required-Users group membership, displaying Alice and Bob as assigned members.
-
-3. conditional-access-policy.png: Conditional Access policy summary, configured to require MFA for the group, and policy set to “On.”
-
-4. per-user-mfa-enabled.png: Microsoft Entra ID’s per-user MFA settings, showing MFA enabled for Alice and Bob (legacy feature)
-
-5. mfa-prompt.png: The actual MFA registration prompt that appears for Alice/Bob at sign-in, proving the policy is enforced.
 
 ---
 
