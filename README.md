@@ -85,16 +85,12 @@ By using Conditional Access with Multi-Factor Authentication (MFA) in Azure, org
    - Checked Microsoft Entra ID Sign-in logs to confirm Conditional Access and MFA enforcement.
 
 4. Cleanup
-   - Delete Test Users & Groups:
-     - Go to Microsoft Entra ID > Users: Delete Alice and Bob.
-     - Go to Groups: Delete the MFA-Required-Users group.
-   - Delete Conditional Access Policy:
-     - Microsoft Entra ID > Security > Conditional Access: Delete the policy you created.
-   - Remove Per-User MFA Settings (if used):
-     - Microsoft Entra ID > Users > Per-user MFA: Disable MFA for test users before deleting.
-   - Delete Other Lab Resources:
-     - Remove any Key Vaults, VMs or other resources created for this lab.
-     - Use the Resource groups blade for fast bulk cleanup.
+   - Go to Microsoft Entra ID > Users: Delete Alice and Bob.
+   - Go to Groups: Delete the MFA-Required-Users group.
+   - Microsoft Entra ID > Security > Conditional Access: Delete the policy you created.
+   - Microsoft Entra ID > Users > Per-user MFA: Disable MFA for test users before deleting.
+   - Remove any Key Vaults, VMs or other resources created for this lab.
+   - Use the Resource groups blade for fast bulk cleanup.
 
 ---
 
