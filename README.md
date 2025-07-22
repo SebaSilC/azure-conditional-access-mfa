@@ -64,31 +64,31 @@ By using Conditional Access with Multi-Factor Authentication (MFA) in Azure, org
 
 ## Steps Performed
 
-1. Microsoft Entra ID User Creation
-   - Created two cloud-only users in Azure AD for lab testing: Alice (alice@azurelabstest.onmicrosoft.com) and Bob (bob@azurelabstest.onmicrosoft.com. Screenshot: users-list.png)
+**1. Microsoft Entra ID User Creation**
+   - Created two cloud-only users in Azure AD for lab testing: Alice (alice@azurelabstest.onmicrosoft.com) and Bob (bob@azurelabstest.onmicrosoft.com. *Screenshot: users-list.png)*
 
-2. Security Group Setup
+**2. Security Group Setup**
    - Created the security group MFA-Required-Users in Microsoft Entra ID.
-   - Added Alice and Bob as members for targeted policy assignment (Screenshot: group-members.png)
+   - Added Alice and Bob as members for targeted policy assignment *(Screenshot: group-members.png)*
 
-3. Per-User MFA Enablement (Legacy)
-   - Enabled per-user MFA for Alice and Bob using Microsoft Entra ID’s classic MFA settings (Screenshot: per-user-mfa-enabled.png)
+**3. Per-User MFA Enablement (Legacy)**
+   - Enabled per-user MFA for Alice and Bob using Microsoft Entra ID’s classic MFA settings *(Screenshot: per-user-mfa-enabled.png)*
 
-4. Conditional Access Policy Configuration
+**4. Conditional Access Policy Configuration**
    - Navigated to Microsoft Entra ID → Security → Conditional Access.
    - Created a Conditional Access policy named Require MFA for MFA-Required-Users.
      - Assigned the policy to the MFA-Required-Users group.
      - Targeted all cloud apps.
      - Set the access control to require multi-factor authentication.
      - Enabled the policy after disabling Security Defaults.
-   - Verified policy status in the Conditional Access policies table (Screenshot: conditional-access-policy.png)
+   - Verified policy status in the Conditional Access policies table *(Screenshot: conditional-access-policy.png)*
 
-5. MFA Prompt Verification
+**5. MFA Prompt Verification**
    - Tested the policy by signing in as Alice Demo.
    - Verified that an MFA registration prompt was required before access was granted to cloud resources.
-   - Confirmed the Conditional Access policy was actively enforcing MFA for group members (Screenshot: mfa-prompt.png)
+   - Confirmed the Conditional Access policy was actively enforcing MFA for group members *(Screenshot: mfa-prompt.png)*
 
-6. Cleanup
+**6. Cleanup**
    - Deleted test users (Alice and Bob) from Microsoft Entra ID to prevent unused accounts.
    - Removed the MFA-Required-Users security group.
    - Deleted the Conditional Access policy enforcing MFA.
