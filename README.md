@@ -1,6 +1,6 @@
-## Azure AD Conditional Access & MFA Lab
+## Microsoft Entra ID Conditional Access & MFA Lab
 
-Implementation of a secure Azure AD environment by enforcing Multi-Factor Authentication (MFA) through Conditional Access policies for group-based identity protection. Demonstrates Zero Trust, risk reduction, and modern identity management in Azure.
+Implementation of a secure Microsoft Entra ID environment by enforcing Multi-Factor Authentication (MFA) through Conditional Access policies for group-based identity protection. Demonstrates Zero Trust, risk reduction, and modern identity management in Azure.
 
 ---
 
@@ -33,7 +33,7 @@ This lab demonstrates how to protect cloud identities in Microsoft Azure using C
 
 ## Objectives
 
-- Create Azure AD users and assign them to security groups.
+- Create Microsoft Entra ID users and assign them to security groups.
 - Deploy a Conditional Access policy that enforces MFA for group members.
 - Test and validate that only group members are prompted for MFA.
 - Document each step for technical and recruiter review.
@@ -49,7 +49,7 @@ This lab demonstrates how to protect cloud identities in Microsoft Azure using C
    - Created a security group MFA-Required-Users and assigned Alice and Bob as members.
 
 2. Conditional Access Policy
-   - Navigated to Azure AD → Security → Conditional Access.
+   - Navigated to Microsoft Entra ID → Security → Conditional Access.
    - Created a policy Require MFA for MFA-Required-Users.
    - Targeted the MFA-Required-Users group.
    - Applied to All cloud apps.
@@ -62,7 +62,7 @@ This lab demonstrates how to protect cloud identities in Microsoft Azure using C
    - Verified the Conditional Access policy triggered an MFA prompt at login.
    - Completed the registration for MFA (Authenticator app/SMS).
    - Verified successful login post-MFA.
-   - Checked Azure AD Sign-in logs to confirm Conditional Access and MFA enforcement.
+   - Checked Microsoft Entra ID Sign-in logs to confirm Conditional Access and MFA enforcement.
 
 ---
 
@@ -72,21 +72,21 @@ This lab demonstrates how to protect cloud identities in Microsoft Azure using C
 
 | Step | Filename                      | Description                                                   |
 | ---- | ----------------------------- | ------------------------------------------------------------- |
-| 1    | users-list.png                | Azure AD user table with Alice and Bob created                |
-| 2    | group-members.png             | MFA-Required-Users group with Alice and Bob as members        |
-| 3    | conditional-access-policy.png | Conditional Access policy configured to require MFA for group |
+| 1    | users-list.png                | Microsoft Entra ID user table with Alice and Bob created.     |
+| 2    | group-members.png             | MFA-Required-Users group with Alice and Bob as members.       |
+| 3    | conditional-access-policy.png | Conditional Access policy configured to require MFA for group.|
 | 4    | per-user-mfa-enabled.png      | Per-user MFA enabled for Alice and Bob (legacy approach)      |
 | 5    | mfa-prompt.png                | MFA prompt shown to Alice/Bob on sign-in (policy tested)      |
 
 ## Screenshot Explanations
 
-1. users-list.png: Shows the Azure AD “Users” list with Alice and Bob created for the lab.
+1. users-list.png: Shows the Microsoft Entra ID “Users” list with Alice and Bob created for the lab.
 
 2. group-members.png: MFA-Required-Users group membership, displaying Alice and Bob as assigned members.
 
 3. conditional-access-policy.png: Conditional Access policy summary, configured to require MFA for the group, and policy set to “On.”
 
-4. per-user-mfa-enabled.png: Azure AD’s per-user MFA settings, showing MFA enabled for Alice and Bob (legacy feature).
+4. per-user-mfa-enabled.png: Microsoft Entra ID’s per-user MFA settings, showing MFA enabled for Alice and Bob (legacy feature)
 
 5. mfa-prompt.png: The actual MFA registration prompt that appears for Alice/Bob at sign-in, proving the policy is enforced.
 
@@ -97,16 +97,16 @@ This lab demonstrates how to protect cloud identities in Microsoft Azure using C
 - Conditional Access is the enterprise-ready way to enforce context-driven MFA in Azure—more flexible and secure than per-user MFA alone.
 - Group-based policies allow for granular, scalable identity security.
 - Documentation (screenshots, diagrams) is essential for proving security posture to technical and non-technical audiences.
-- Azure AD’s sign-in logs are powerful for verifying policy effectiveness and for audit trails.
+- Microsoft Entra ID’s sign-in logs are powerful for verifying policy effectiveness and for audit trails.
 
 ---
 
 ## References
 
-- Conditional Access in Azure Active Directory
+- Conditional Access in Microsoft Entra ID
 (https://learn.microsoft.com/en-us/entra/identity/conditional-access/)
 
-- Enable per-user MFA in Azure AD
+- Enable per-user MFA in Microsoft Entra ID
 (https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-azure-mfa)
 
 - Zero Trust Security Principles: Microsoft Zero Trust Guidance
