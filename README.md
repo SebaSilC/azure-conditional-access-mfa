@@ -7,12 +7,15 @@ Implementation of a secure Microsoft Entra ID environment by enforcing Multi-Fac
 ## Table of Contents
 
 - [Overview]
+- [Real-World Risk]
+- [What I Built]
 - [Diagram]
 - [Objectives]
 - [Steps Performed]
   - [1. User and Group Creation]
   - [2. Conditional Access Policy]
   - [3. Testing and Verification]
+  - [4. Cleanup]
 - [Screenshots]
 - [Lessons Learned]
 - [References]
@@ -22,6 +25,23 @@ Implementation of a secure Microsoft Entra ID environment by enforcing Multi-Fac
 ## Overview
 
 This lab demonstrates how to protect cloud identities in Microsoft Azure using Conditional Access and Multi-Factor Authentication (MFA). The setup ensures only authorized users, from a specific group, can access cloud resources—and only after passing MFA. This reflects real-world security practice, following the Zero Trust model to defend against credential compromise.
+
+---
+
+## Real-World Risk
+
+Most security breaches are caused by compromised user credentials. Attackers use phishing, credential stuffing, or brute force attacks to gain unauthorized access to cloud services. Without strong authentication and context-based access control, even a single leaked password can give an attacker access to sensitive data or critical infrastructure.
+By using Conditional Access with Multi-Factor Authentication (MFA) in Azure, organizations drastically reduce the risk of unauthorized access—helping to prevent data breaches, account takeover, and privilege escalation.
+
+---
+
+## What I Built
+
+- Microsoft Entra ID users (Alice and Bob) and a dedicated security group (MFA-Required-Users)
+- A Conditional Access policy targeting the group, requiring MFA for all sign-ins to cloud apps.
+- Enforced group-based identity protection following Zero Trust security principles.
+- Full test flow: user login, MFA prompt enforced, access granted only after successful verification.
+- Screenshots, documentation, and an architecture diagram for recruiter and technical review.
 
 ---
 
@@ -63,6 +83,18 @@ This lab demonstrates how to protect cloud identities in Microsoft Azure using C
    - Completed the registration for MFA (Authenticator app/SMS).
    - Verified successful login post-MFA.
    - Checked Microsoft Entra ID Sign-in logs to confirm Conditional Access and MFA enforcement.
+
+4. Cleanup
+   - Delete Test Users & Groups:
+     - Go to Microsoft Entra ID > Users: Delete Alice and Bob.
+     - Go to Groups: Delete the MFA-Required-Users group.
+   - Delete Conditional Access Policy:
+     - Microsoft Entra ID > Security > Conditional Access: Delete the policy you created.
+   - Remove Per-User MFA Settings (if used):
+     - Microsoft Entra ID > Users > Per-user MFA: Disable MFA for test users before deleting.
+   - Delete Other Lab Resources:
+     - Remove any Key Vaults, VMs or other resources created for this lab.
+     - Use the Resource groups blade for fast bulk cleanup.
 
 ---
 
