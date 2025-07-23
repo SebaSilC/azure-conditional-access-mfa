@@ -122,14 +122,9 @@ By using Conditional Access with Multi-Factor Authentication (MFA) in Azure, org
 
 ## References
 
-- Conditional Access in Microsoft Entra ID
-(https://learn.microsoft.com/en-us/entra/identity/conditional-access/)
-
-- Enable per-user MFA in Microsoft Entra ID
-(https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-azure-mfa)
-
-- Zero Trust Security Principles: Microsoft Zero Trust Guidance
-(https://www.microsoft.com/en-us/security/business/zero-trust)
+- [Conditional Access in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/conditional-access/)
+- [Enable per-user MFA in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-azure-mfa)
+- [Zero Trust Security Principles: Microsoft Zero Trust Guidance](https://www.microsoft.com/en-us/security/business/zero-trust)
 
 ---
 
