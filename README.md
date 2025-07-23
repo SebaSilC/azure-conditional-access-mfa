@@ -99,7 +99,7 @@ By using Conditional Access with Multi-Factor Authentication (MFA) in Azure, org
 
 ## Screenshots
 
-*All screenshots are included in the screenshots/ folder.
+*All screenshots are included in the screenshots/ folder.*
 
 | Step | Filename                      | Description                                                   |
 | ---- | ----------------------------- | ------------------------------------------------------------- |
