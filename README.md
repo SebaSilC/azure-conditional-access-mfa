@@ -128,4 +128,6 @@ By using Conditional Access with Multi-Factor Authentication (MFA) in Azure, org
 
 ---
 
-Sebastian Silva C. – July, 2025 – Berlin, Germany.
+Sebastian Silva C. – July 2025 – Berlin, Germany.
+- [LinkedIn](https://www.linkedin.com/in/sebastiansilc/)
+- [GitHub](https://github.com/SebaSilC)
