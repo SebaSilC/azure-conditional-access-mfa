@@ -6,21 +6,21 @@ Implementation of a secure Microsoft Entra ID environment by enforcing Multi-Fac
 
 ## Table of Contents
 
-- [Overview]
-- [Real-World Risk]
-- [What I Built]
-- [Diagram]
-- [Objectives]
-- [Steps Performed]
+- [Overview](#overview)
+- [Real-World Risk](#real-world-risk)
+- [What I Built](#what-i-built)
+- [Diagram](#diagram)
+- [Objectives](#objectives)
+- [Steps Performed](#steps-performed)
   - [1. Microsoft Entra ID User Creation]
   - [2. Security Group Setup]
   - [3. Per-User MFA Enablement (Legacy)]
   - [4. Conditional Access Policy Configuration]
   - [5. MFA Prompt Verification]
   - [6. Cleanup]
-- [Screenshots]
-- [Lessons Learned]
-- [References]
+- [Screenshots](#screenshots)
+- [Lessons Learned](#lessons-learned)
+- [References](#references)
 
 ---
 
