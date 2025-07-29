@@ -1,4 +1,4 @@
-## Microsoft Entra ID Conditional Access & MFA Lab
+## Azure Microsoft Entra ID Conditional Access & MFA Lab
 
 Implementation of a secure Microsoft Entra ID environment by enforcing Multi-Factor Authentication (MFA) through Conditional Access policies for group-based identity protection. Demonstrates Zero Trust, risk reduction, and modern identity management in Azure.
 
