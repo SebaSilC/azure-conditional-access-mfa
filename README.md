@@ -21,6 +21,7 @@ Implementation of a secure Microsoft Entra ID environment by enforcing Multi-Fac
 - [Screenshots](#screenshots)
 - [Lessons Learned](#lessons-learned)
 - [References](#references)
+- [Contact](#contact)
 
 ---
 
@@ -128,6 +129,7 @@ By using Conditional Access with Multi-Factor Authentication (MFA) in Azure, org
 
 ---
 
-Sebastian Silva C. – July 2025 – Berlin, Germany.
-- [LinkedIn](https://www.linkedin.com/in/sebastiansilc/)
-- [GitHub](https://github.com/SebaSilC)
+## Contact
+
+Sebastian Silva C. – July, 2025 – Berlin, Germany.  
+[LinkedIn](https://www.linkedin.com/in/sebastiansilc) | [GitHub](https://github.com/SebaSilC) | [sebastian@playbookvisualarts.com](mailto:sebastian@playbookvisualarts.com)
